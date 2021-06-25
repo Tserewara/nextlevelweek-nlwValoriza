@@ -22,4 +22,4 @@ app.use((err, request, response, next) => {
         message: "Internal Server Error"
     });
 });
-app.listen(process.env.PORT || 3000, () => console.log("Server is running NLW"));
+app.listen(3000, () => console.log("Server is running NLW"));
