@@ -1,0 +1,17 @@
+FROM node:14-alpine
+
+ARG POSTGRES_PASSWORD
+
+ENV POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+
+WORKDIR nlwValoriza/
+
+COPY . .
+
+RUN yarn
+
+RUN yarn tsc
+
+EXPOSE 3000
+
+ENTRYPOINT yarn start

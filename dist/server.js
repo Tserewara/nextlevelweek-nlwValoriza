@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 require("express-async-errors");
+const cors_1 = __importDefault(require("cors"));
 const routes_1 = require("./routes");
 require("./database");
 const app = express_1.default();
+app.use(cors_1.default());
 app.use(express_1.default.json());
 app.use(routes_1.router);
 app.use((err, request, response, next) => {

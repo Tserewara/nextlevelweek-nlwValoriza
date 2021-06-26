@@ -1,0 +1,36 @@
+version: "3"
+services:
+  database:
+    restart: always
+    build:
+      dockerfile: db-docker/Dockerfile
+      context: .
+    image: nlw-valoriza-postgres
+    container_name: nlw-valoriza-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - internal-network
+
+  app:
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: nlw-valoriza-node
+    container_name: nlw-valoriza-app
+    ports:
+      - "3000:3000"
+    networks:
+      - internal-network
+    depends_on:
+      - database
+
+networks:
+  internal-network:
+    driver: bridge
+    name: nlw-valoriza-network
+volumes:
+  pgdata:
