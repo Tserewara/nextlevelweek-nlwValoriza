@@ -20,3 +20,31 @@ Projeto criado durante o evento Next Level Week da RocketSeat.
 - Aplicação deployada com nginx em um contêiner como proxy reverso
 - Deploy feito em um vps da digital ocean no seguinte ip: <http://157.245.210.241>
 - Criação de pipeline de integração contínua para deploy automatizado usando github actions
+
+## Como rodar
+
+Para rodar o projeto localmente, use o seguinte comando:
+
+```shell
+make run
+```
+
+Certifique-se de ter o make instalado, bem como o docker e o docker-compose. Caso não coisa rodar usando esse comando, rode diretamente usando o `docker-compose`.
+
+```shell
+docker-compose build --build-arg POSTGRES_PASSWORD=senhaqualquer --build-arg MODE=DEVELOPMENT
+docker-compose up -d
+docker exec nlw-valoriza-app yarn typeorm migration:run
+```
+
+Para descer a aplicação:
+
+```shell
+make run
+```
+
+ou:
+
+```shell
+docker-compose down
+```
