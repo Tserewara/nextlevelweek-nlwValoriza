@@ -1,0 +1,21 @@
+name: nlw valoriza
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            cd nextlevelweek-nlwValoriza/
+            make deploy POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}}
