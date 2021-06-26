@@ -21,8 +21,6 @@ services:
       context: .
     image: nlw-valoriza-node
     container_name: nlw-valoriza-app
-    ports:
-      - "3000:3000"
     networks:
       - internal-network
     depends_on:
