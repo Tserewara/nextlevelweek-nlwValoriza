@@ -27,17 +27,18 @@ services:
       - internal-network
     depends_on:
       - database
-      nginx:
-        restart: always
-        image: nginx:1.19.6-alpine
-        container_name: nginx
-        ports:
-          - "80:80"
-        networks:
-          - internal-network
-        depends_on:
-          - database
-          - app
+
+  nginx:
+    restart: always
+    image: nginx:1.19.6-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    networks:
+      - internal-network
+    depends_on:
+      - database
+      - app
 
 networks:
   internal-network:
