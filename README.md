@@ -18,7 +18,7 @@ Projeto criado durante o evento Next Level Week da RocketSeat.
 - Uso do postgres como banco de dados ao invés do sqlite
 - Criação de contêineres para deploy, usando docker e docker-compose
 - Aplicação deployada com nginx em um contêiner como proxy reverso
-- Deploy feito em um vps da digital ocean no seguinte ip: <http://157.245.210.241>
+- Deploy feito em um vps da digital ocean (atualmente fora do ar)
 - Criação de pipeline de integração contínua para deploy automatizado usando github actions
 
 ## Como rodar
