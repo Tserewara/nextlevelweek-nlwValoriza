@@ -29,7 +29,7 @@ Para rodar o projeto localmente, use o seguinte comando:
 make run
 ```
 
-Certifique-se de ter o make instalado, bem como o docker e o docker-compose. Caso não coisa rodar usando esse comando, rode diretamente usando o `docker-compose`.
+Certifique-se de ter o `make` instalado, bem como o docker e o docker-compose. Caso não consiga rodar usando esse comando, rode diretamente usando o `docker-compose`.
 
 ```shell
 docker-compose build --build-arg POSTGRES_PASSWORD=senhaqualquer --build-arg MODE=DEVELOPMENT
